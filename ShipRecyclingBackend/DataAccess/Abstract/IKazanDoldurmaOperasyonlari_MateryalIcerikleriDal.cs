@@ -1,0 +1,6 @@
+﻿using Core.DataAccess;
+
+public interface IKazanDoldurmaOperasyonlari_MateryalIcerikleriDal:IEntityRepository<KazanDoldurmaOperasyonlari_MateryalIcerikleri>
+{
+
+}

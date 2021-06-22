@@ -1,0 +1,6 @@
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Concrete.EntityFramework.Contexts;
+
+public class EfKazanDoldurmaOperasyonlari_MateryalIcerikleriDal : EfEntityRepositoryBase<KazanDoldurmaOperasyonlari_MateryalIcerikleri, NorthwindContext>, IKazanDoldurmaOperasyonlari_MateryalIcerikleriDal
+{
+}
