@@ -55,10 +55,10 @@ namespace WebAPI.Controllers
                 var result = _kazanDoldurmaOPerasyonlariService.Add(kazanDoldurmaOPerasyonlari);
                 if (result.Success)
                 {
-                    return Ok(result.Message);
+                    return Ok(result);
                 }
 
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
 
             [HttpPost("update")]
@@ -67,10 +67,10 @@ namespace WebAPI.Controllers
                 var result = _kazanDoldurmaOPerasyonlariService.Update(kazanDoldurmaOPerasyonlari);
                 if (result.Success)
                 {
-                    return Ok(result.Message);
+                    return Ok(result);
                 }
 
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
 
             [HttpPost("delete")]
@@ -79,10 +79,10 @@ namespace WebAPI.Controllers
                 var result = _kazanDoldurmaOPerasyonlariService.Delete(kazanDoldurmaOPerasyonlari);
                 if (result.Success)
                 {
-                    return Ok(result.Message);
+                    return Ok(result);
                 }
 
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
 
         }

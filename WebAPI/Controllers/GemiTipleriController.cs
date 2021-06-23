@@ -51,7 +51,7 @@ namespace WebAPI.Controllers
                 return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("update")]
@@ -60,10 +60,10 @@ namespace WebAPI.Controllers
             var result = _gemiTipleriService.Update(gemiTipleri);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("delete")]
@@ -72,10 +72,10 @@ namespace WebAPI.Controllers
             var result = _gemiTipleriService.Delete(gemiTipleri);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
     }

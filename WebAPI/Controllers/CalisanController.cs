@@ -47,7 +47,7 @@ namespace WebAPI.Controllers
             var result = _calisanService.Add(calisan);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -59,7 +59,7 @@ namespace WebAPI.Controllers
             var result = _calisanService.Update(calisan);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -71,7 +71,7 @@ namespace WebAPI.Controllers
             var result = _calisanService.Delete(calisan);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);

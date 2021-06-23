@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
             var result = _hazMatTipiService.Add(hazMatTip);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -61,7 +61,7 @@ namespace WebAPI.Controllers
             var result = _hazMatTipiService.Update(hazMatTip);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -73,7 +73,7 @@ namespace WebAPI.Controllers
             var result = _hazMatTipiService.Delete(hazMatTip);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);

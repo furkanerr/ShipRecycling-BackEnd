@@ -48,7 +48,7 @@ namespace WebAPI.Controllers
             var result = _bloklarService.Add(blok);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -60,7 +60,7 @@ namespace WebAPI.Controllers
             var result = _bloklarService.Update(blok);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -72,7 +72,7 @@ namespace WebAPI.Controllers
             var result = _bloklarService.Delete(blok);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);

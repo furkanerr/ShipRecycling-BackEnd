@@ -54,7 +54,7 @@ namespace WebAPI.Controllers
             var result = _kazanlarService.Add(kazan);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -66,7 +66,7 @@ namespace WebAPI.Controllers
             var result = _kazanlarService.Update(kazan);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -78,7 +78,7 @@ namespace WebAPI.Controllers
             var result = _kazanlarService.Delete(kazan);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);

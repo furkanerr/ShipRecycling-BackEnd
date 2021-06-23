@@ -54,10 +54,10 @@ namespace WebAPI.Controllers
             var result = _meslekService.Add(meslek);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("update")]
@@ -66,10 +66,10 @@ namespace WebAPI.Controllers
             var result = _meslekService.Update(meslek);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("delete")]
@@ -78,10 +78,10 @@ namespace WebAPI.Controllers
             var result = _meslekService.Delete(meslek);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
     }

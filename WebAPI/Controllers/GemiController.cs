@@ -90,10 +90,10 @@ namespace WebAPI.Controllers
             var result = _gemilerService.Update(gemi);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("delete")]
@@ -102,7 +102,7 @@ namespace WebAPI.Controllers
             var result = _gemilerService.Delete(gemi);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);

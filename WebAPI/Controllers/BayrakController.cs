@@ -52,7 +52,7 @@ namespace WebAPI.Controllers
             var result = _bayrakService.Add(bayrak);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -64,7 +64,7 @@ namespace WebAPI.Controllers
             var result = _bayrakService.Update(bayrak);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
             var result = _bayrakService.Delete(bayrak);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);

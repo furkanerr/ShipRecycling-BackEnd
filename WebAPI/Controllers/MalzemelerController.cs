@@ -54,10 +54,10 @@ namespace WebAPI.Controllers
             var result = _malzemelerService.Add(malzeme);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("update")]
@@ -66,10 +66,10 @@ namespace WebAPI.Controllers
             var result = _malzemelerService.Update(malzeme);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("delete")]
@@ -78,10 +78,10 @@ namespace WebAPI.Controllers
             var result = _malzemelerService.Delete(malzeme);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
     }
