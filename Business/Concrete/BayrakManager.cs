@@ -48,7 +48,7 @@ public class BayrakManager : IBayrakService
     public IResult Update(Bayraklar bayrak)
     {
         _bayraklarDal.Update(bayrak);
-        return new SuccessResult();
+        return new SuccessResult(Messages.Updated);
     }
 
    

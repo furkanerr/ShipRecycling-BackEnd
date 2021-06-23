@@ -21,6 +21,8 @@
 
         public static string GemiAdded = "Gemi başarıyla eklendi.";
         public static string Added = " Başarıyla eklendi.";
+        public static string Updated = " Başarıyla güncellendi.";
         public static string AddError = "Eklenirken bir hata oluştu";
+
     }
 }

@@ -30,4 +30,9 @@ public class EfGemilerDal : EfEntityRepositoryBase<Gemiler, NorthwindContext>, I
         }
 
     }
+
+    public GemiDetailDto GetGemiDetailsById(int Id)
+    {
+        throw new System.NotImplementedException();
+    }
 }

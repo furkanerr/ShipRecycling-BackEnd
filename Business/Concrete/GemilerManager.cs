@@ -17,7 +17,7 @@ public class GemilerManager : IGemilerService
 
     public IDataResult<Gemiler> GetById(int gemiId)
     {
-        return new SuccessDataResult<Gemiler>(_gemilerDal.Get(g=>g.Id==gemiId));
+        return new SuccessDataResult<Gemiler>(_gemilerDal.Get(g=>g.Id==gemiId),Messages.GemiListed);
     }
 
     public IDataResult<List<Gemiler>> GetList()
