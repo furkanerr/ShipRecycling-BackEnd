@@ -84,7 +84,7 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public IActionResult Update(Gemiler gemi)
         {
             var result = _gemilerService.Update(gemi);

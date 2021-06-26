@@ -36,10 +36,10 @@ namespace WebAPI.Controllers
             var result = _gemiTipleriService.GetById(gemiTipiId);
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("add")]
@@ -54,7 +54,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public IActionResult Update(GemiTipleri gemiTipleri)
         {
             var result = _gemiTipleriService.Update(gemiTipleri);
