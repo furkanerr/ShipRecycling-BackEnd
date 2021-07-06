@@ -4,6 +4,6 @@ public class Resimler : IEntity
 {
     public int Id { get; set; }
 
-    public int BlokId { get; set; }
+    public int GemiId { get; set; }
     public string ResimAdresi { get; set; }
 }
