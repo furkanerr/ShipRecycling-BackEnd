@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Core.Utilities.FileHelper;
 using Core.Utilities.Results;
+using Microsoft.AspNetCore.Http;
 
 public class ResimlerManager : IResimlerService
 {
@@ -22,11 +24,15 @@ public class ResimlerManager : IResimlerService
         return new ErrorDataResult<List<Resimler>>(_resimlerDal.GetList().ToList());
     }
 
-    public IResult Add(Resimler resimler)
+    public IResult Add(Resimler resimler, IFormFile file)
     {
+        resimler.ResimAdresi = FileHelper.AddAsync(file);
+       
         _resimlerDal.Add(resimler);
         return new SuccessResult();
     }
+
+   
 
     public IResult Delete(Resimler resimler)
     {
