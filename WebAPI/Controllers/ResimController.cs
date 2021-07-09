@@ -47,15 +47,16 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Resimler resim)
+        public IActionResult AddAsync([FromForm(Name = ("Image"))] IFormFile file, [FromForm] Resimler resimler)
         {
-            var result = _resimlerService.Add(resim);
+            var result = _resimlerService.Add(resimler,file);
+
             if (result.Success)
             {
                 return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("update")]
@@ -84,4 +85,4 @@ namespace WebAPI.Controllers
 
     }
     }
-}
+
