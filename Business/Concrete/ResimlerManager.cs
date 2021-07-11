@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.Utilities.FileHelper;
 using Core.Utilities.Results;
@@ -42,6 +43,15 @@ public class ResimlerManager : IResimlerService
 
     public IResult Update(Resimler resimler)
     {
+        _resimlerDal.Update(resimler);
+        return new SuccessResult();
+    }
+
+    public IResult Update(Resimler resimler, IFormFile file)
+    {
+        var oldpath = $@"{Environment.CurrentDirectory}\wwwroot{_resimlerDal.Get(p => p.Id == resimler.Id).ResimAdresi}";
+        resimler.ResimAdresi = FileHelper.UpdateAsync(oldpath, file);
+
         _resimlerDal.Update(resimler);
         return new SuccessResult();
     }

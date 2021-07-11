@@ -59,16 +59,18 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+  
+
         [HttpPost("update")]
-        public IActionResult Update(Resimler resim)
-        {
-            var result = _resimlerService.Update(resim);
+        public IActionResult Update([FromForm(Name = ("Image"))] IFormFile file, [FromForm] Resimler resim)
+        {      
+            var result = _resimlerService.Update(resim, file);
+
             if (result.Success)
             {
                 return Ok(result);
             }
-
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("delete")]

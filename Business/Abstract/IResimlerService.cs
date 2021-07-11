@@ -9,7 +9,7 @@ public interface IResimlerService
     IResult Add(Resimler resimler,IFormFile file);
     
     IResult Delete(Resimler resimler);
-    IResult Update(Resimler resimler);
+    IResult Update(Resimler resimler, IFormFile file);
 
    
 
