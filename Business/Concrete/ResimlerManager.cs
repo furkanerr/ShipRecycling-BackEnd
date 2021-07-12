@@ -15,14 +15,14 @@ public class ResimlerManager : IResimlerService
         _resimlerDal = resimlerDal;
     }
 
-    public IDataResult<Resimler> GetById(int resimlerId)
+    public IDataResult<Resimler> GetById(int gemiId)
     {
-        return new SuccessDataResult<Resimler>(_resimlerDal.Get(r=>r.Id==resimlerId));
+        return new SuccessDataResult<Resimler>(_resimlerDal.Get(r=>r.GemiId==gemiId));
     }
 
     public IDataResult<List<Resimler>> GetList()
     {
-        return new ErrorDataResult<List<Resimler>>(_resimlerDal.GetList().ToList());
+        return new SuccessDataResult<List<Resimler>>(_resimlerDal.GetList().ToList());
     }
 
     public IResult Add(Resimler resimler, IFormFile file)
@@ -41,11 +41,7 @@ public class ResimlerManager : IResimlerService
         return new SuccessResult();
     }
 
-    public IResult Update(Resimler resimler)
-    {
-        _resimlerDal.Update(resimler);
-        return new SuccessResult();
-    }
+  
 
     public IResult Update(Resimler resimler, IFormFile file)
     {

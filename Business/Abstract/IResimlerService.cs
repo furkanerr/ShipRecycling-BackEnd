@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 
 public interface IResimlerService
 {
-    IDataResult<Resimler> GetById(int resimlerId);
+    IDataResult<Resimler> GetById(int gemiId);
     IDataResult<List<Resimler>> GetList();
     IResult Add(Resimler resimler,IFormFile file);
     

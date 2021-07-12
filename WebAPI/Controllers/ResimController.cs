@@ -35,15 +35,15 @@ namespace WebAPI.Controllers
         
 
         [HttpGet("getbyid")]
-        public IActionResult GetById(int resimId)
+        public IActionResult GetById(int gemiId)
         {
-            var result = _resimlerService.GetById(resimId);
+            var result = _resimlerService.GetById(gemiId);
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
 
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
         [HttpPost("add")]
