@@ -96,7 +96,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
+        [HttpDelete("delete")]
         public IActionResult Delete(Gemiler gemi)
         {
             var result = _gemilerService.Delete(gemi);
