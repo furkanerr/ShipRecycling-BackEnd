@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
         
 
         [HttpGet("getbyid")]
-        public IActionResult GetById(int gemiId)
+        public IActionResult GetById( int gemiId)
         {
             var result = _resimlerService.GetById(gemiId);
             if (result.Success)
