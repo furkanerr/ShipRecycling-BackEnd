@@ -8,11 +8,12 @@ using Entities.Dtos;
 public class GemilerManager : IGemilerService
 {
 
-    private IGemilerDal _gemilerDal;
-
-    public GemilerManager(IGemilerDal gemilerDal)
+    private  static IGemilerDal _gemilerDal;
+    private static IResimlerDal _resimlerDal;
+    public GemilerManager(IGemilerDal gemilerDal, IResimlerDal resimlerDal)
     {
         _gemilerDal = gemilerDal;
+        _resimlerDal = resimlerDal;
     }
 
     public IDataResult<Gemiler> GetById(int gemiId)
@@ -40,6 +41,18 @@ public class GemilerManager : IGemilerService
 
     public IResult Delete(Gemiler gemi)
     {
+        var imageOfDeletedGemi = _resimlerDal.Get(r=>r.GemiId==gemi.Id);
+        IResult result = BusinessRules.Run(CheckGemiImageExist(imageOfDeletedGemi.Id));
+        
+        if (result != null)
+        {
+            _resimlerDal.Delete(imageOfDeletedGemi);
+            return result;
+        }
+
+        
+        
+       
         _gemilerDal.Delete(gemi);
         return new SuccessResult();
     }
@@ -54,4 +67,19 @@ public class GemilerManager : IGemilerService
     {
         return new SuccessDataResult<List<GemiDetailDto>>(_gemilerDal.GetGemiDetails().ToList(),Messages.GemiListed);
     }
+
+
+
+    public static IResult  CheckGemiImageExist(int id)
+    {
+        var result=  _resimlerDal.IsExist(id);
+
+        if (!result)
+        {
+            return new ErrorResult();
+        }
+        return new SuccessResult();
+    }
+
+
 }

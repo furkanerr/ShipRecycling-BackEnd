@@ -99,6 +99,7 @@ namespace WebAPI.Controllers
         [HttpDelete("delete")]
         public IActionResult Delete(int id)
         {
+
             var deletedGemi = _gemilerService.GetById(id).Data;
             var result = _gemilerService.Delete(deletedGemi);
             if (result.Success)

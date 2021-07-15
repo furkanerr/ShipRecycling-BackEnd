@@ -2,4 +2,5 @@
 
 public interface IResimlerDal:IEntityRepository<Resimler>
 {
+    bool IsExist(int id);
 }
