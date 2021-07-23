@@ -68,6 +68,10 @@ public class GemilerManager : IGemilerService
         return new SuccessDataResult<List<GemiDetailDto>>(_gemilerDal.GetGemiDetails().ToList(),Messages.GemiListed);
     }
 
+    public IDataResult<List<GemiDetailDto>> GetGemiDetailsByGemiId(int Id)
+    {
+        return new SuccessDataResult<List<GemiDetailDto>>(_gemilerDal.GetGemiDetails(g=>g.Id==Id).ToList(),Messages.GemiListed);
+    }
 
 
     public static IResult  CheckGemiImageExist(int id)

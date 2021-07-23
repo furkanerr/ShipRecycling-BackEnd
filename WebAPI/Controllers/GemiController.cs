@@ -48,6 +48,21 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
+        [HttpGet("getdetailsofgemibyid")]
+        //[Authorize(Roles = "Product.List")]
+        public IActionResult GetGemiDetailsByGemiId(int Id)
+        {
+
+            var result = _gemilerService.GetGemiDetailsByGemiId(Id);
+            
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result.Message);
+        }
+
         [HttpGet("getlistbygemitipi")]
         public IActionResult GetListByGemiTipi(int gemiTipiId)
         {

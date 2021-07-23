@@ -11,6 +11,7 @@ public interface IGemilerService
     IResult Delete(Gemiler gemi);
     IResult Update(Gemiler gemi);
     IDataResult< List<GemiDetailDto>> GetGemiDetails();
+    IDataResult< List<GemiDetailDto>> GetGemiDetailsByGemiId(int Id);
 
 
 
