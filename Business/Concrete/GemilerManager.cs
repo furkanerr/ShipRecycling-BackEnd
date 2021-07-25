@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
@@ -32,6 +33,7 @@ public class GemilerManager : IGemilerService
 
     }
 
+    [SecuredOperation("admin")]
     public IResult Add(Gemiler gemi)
     {
       //  IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName), CheckIfCategoryIsEnabled());

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Results;
 
@@ -22,6 +23,7 @@ public class GemiTipleriManager : IGemiTipleriService
         return new SuccessDataResult<List<GemiTipleri>>(_gemiTipleriDal.GetList().ToList());
     }
 
+    [SecuredOperation("Admin")]
     public IResult Add(GemiTipleri gemiTipleri)
     {
         _gemiTipleriDal.Add(gemiTipleri);
